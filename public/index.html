@@ -24,7 +24,19 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Great+Vibes&family=Poppins:wght@200;600&family=Roboto:wght@300&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@200;600&family=Roboto:wght@300&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap");
+    </style>
+
     <title>React App</title>
+    <style>
+      /* Style the div */
+      #display_form {
+        display: none; /* Initially hide the div */
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -39,5 +51,30 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <div id="display_form">
+      <div
+        class="visme_d"
+        data-title="Shivangi"
+        data-url="8r6pp8xk-untitled-project"
+        data-domain="forms"
+        data-full-page="false"
+        data-min-height="500px"
+        data-form-id="34090"
+      ></div>
+    </div>
+
+    <script>
+      function showDelayedDiv() {
+        var div = document.getElementById("display_form");
+
+        setTimeout(function () {
+          div.style.display = "block";
+        }, 5000);
+      }
+      console.log("called");
+
+      showDelayedDiv();
+    </script>
+    <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
   </body>
 </html>

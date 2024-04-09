@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+import { useEffect, useState } from 'react';
+import AnimatedBox from './Component/AnimationBox';
+import React from 'react';
+import Portfolio from './Component/Portfolio';
+
+
+
+const App = () => {
+  const [showAnimation, setShowAnimation] = useState(true);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowAnimation(false);
+    }, 3000);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* {showAnimation &&<div className='loading'> <AnimatedBox/></div>} */}
+      {!showAnimation && <Portfolio/>}
     </div>
   );
-}
+};
 
 export default App;
